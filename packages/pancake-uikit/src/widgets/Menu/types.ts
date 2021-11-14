@@ -30,4 +30,10 @@ export interface NavProps {
   buyCakeLabel: string;
   langs: Language[];
   setLang: (lang: Language) => void;
+  darkLogo?: string;
+  lightLogo?: string;
+  desktopLogoHeight?: string;
+  desktopLogoWidth?: string;
+  mobileLogoHeight?: string;
+  mobileLogoWidth?: string;
 }

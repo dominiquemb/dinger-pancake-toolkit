@@ -6,6 +6,13 @@ import { Colors } from "../../theme";
 export interface SvgProps extends SVGAttributes<HTMLOrSVGElement>, SpaceProps {
   theme?: DefaultTheme;
   spin?: boolean;
+  darkLogo?: string;
+  lightLogo?: string;
+  desktopLogoHeight?: string;
+  desktopLogoWidth?: string;
+  mobileLogoHeight?: string;
+  mobileLogoWidth?: string;
+  isDark?: boolean;
 }
 
 export type IconComponentType = {

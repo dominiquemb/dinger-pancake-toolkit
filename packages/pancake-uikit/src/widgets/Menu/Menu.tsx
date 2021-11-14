@@ -13,6 +13,7 @@ import Logo from "./components/Logo";
 import { MENU_HEIGHT, MOBILE_MENU_HEIGHT } from "./config";
 import { NavProps } from "./types";
 import LangSelector from "../../components/LangSelector/LangSelector";
+import { ProposalIcon } from "../../components/Svg";
 
 const Wrapper = styled.div`
   position: relative;
@@ -66,6 +67,12 @@ const Menu: React.FC<NavProps> = ({
   langs,
   buyCakeLabel,
   children,
+  darkLogo,
+  lightLogo,
+  desktopLogoWidth,
+  desktopLogoHeight,
+  mobileLogoWidth,
+  mobileLogoHeight,
 }) => {
   const { isMobile } = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState(true);
@@ -110,7 +117,15 @@ const Menu: React.FC<NavProps> = ({
     <Wrapper>
       <StyledNav showMenu={showMenu}>
         <Flex>
-          <Logo isDark={isDark} href={homeLink?.href ?? "/"} />
+          <Logo 
+            isDark={isDark} 
+            href={homeLink?.href ?? "/"}
+            darkLogo={darkLogo}
+            lightLogo={lightLogo}
+            desktopLogoWidth={desktopLogoWidth}
+            mobileLogoWidth={mobileLogoWidth}
+            desktopLogoHeight={desktopLogoHeight}
+            mobileLogoHeight={mobileLogoHeight} />
           {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" />}
         </Flex>
         <Flex alignItems="center">
@@ -159,6 +174,12 @@ const Menu: React.FC<NavProps> = ({
             cakePriceUsd={cakePriceUsd}
             buyCakeLabel={buyCakeLabel}
             mb={[`${MOBILE_MENU_HEIGHT}px`, null, "0px"]}
+            darkLogo={darkLogo}
+            lightLogo={lightLogo}
+            desktopLogoWidth={desktopLogoWidth}
+            mobileLogoWidth={mobileLogoWidth}
+            desktopLogoHeight={desktopLogoHeight}
+            mobileLogoHeight={mobileLogoHeight}
           />
         </Inner>
       </BodyWrapper>

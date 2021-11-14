@@ -15,4 +15,10 @@ export type FooterProps = {
   currentLang: string;
   langs: Language[];
   setLang: (lang: Language) => void;
+  darkLogo?: string;
+  lightLogo?: string;
+  desktopLogoHeight?: string;
+  desktopLogoWidth?: string;
+  mobileLogoHeight?: string;
+  mobileLogoWidth?: string;
 } & FlexProps;

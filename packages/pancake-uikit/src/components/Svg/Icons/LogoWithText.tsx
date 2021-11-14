@@ -3,21 +3,20 @@ import { SvgProps } from "../types";
 
 interface LogoProps extends SvgProps {
   isDark: boolean;
+  darkLogo?: string;
+  lightLogo?: string;
+  desktopLogoHeight?: string;
+  desktopLogoWidth?: string;
+  mobileLogoHeight?: string;
+  mobileLogoWidth?: string;
 }
 
 const Logo: React.FC<LogoProps> = ({ isDark, ...props }) => {
-  // const DingerLight = require("assets/Dinger Swap Light.svg");
-  // const DingerDark = require("assets/Dinger Swap Dark.svg");
-
   const textColor = isDark ? "#FFFFFF" : "#000000";
-
-  var path = require('path');
-  var filename = path.basename(__filename);
-  console.log(filename);
-
+  
   return (
     <>
-      {/* {isDark ? <img src={DingerDark} className="desktop-icon" /> : <img src={DingerLight} className="desktop-icon" />} */}
+      {isDark ? <img src={props.darkLogo} className="desktop-icon" /> : <img src={props.lightLogo} className="desktop-icon" />}
     </>
   );
 };

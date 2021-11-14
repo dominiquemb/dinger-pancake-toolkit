@@ -5,8 +5,14 @@ import Flex from "../../../components/Box/Flex";
 import { LogoIcon, LogoWithTextIcon } from "../../../components/Svg";
 
 interface Props {
-  isDark: boolean;
   href: string;
+  darkLogo?: string;
+  lightLogo?: string;
+  desktopLogoHeight?: string;
+  desktopLogoWidth?: string;
+  mobileLogoHeight?: string;
+  mobileLogoWidth?: string;
+  isDark: boolean;
 }
 
 const blink = keyframes`
@@ -14,17 +20,20 @@ const blink = keyframes`
   50% { transform:  scaleY(0.1); } 
 `;
 
-const StyledLink = styled(Link)`
+const Logo: React.FC<Props> = ({ isDark, href, ...props }) => {
+  const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   .mobile-icon {
-    width: 131px;
+    width: ${props.mobileLogoWidth ? props.mobileLogoWidth + 'px' : '35px'};
+    height: ${props.mobileLogoHeight ? props.mobileLogoWidth + 'px' : 'auto'};
     ${({ theme }) => theme.mediaQueries.nav} {
       display: none;
     }
   }
   .desktop-icon {
-    width: 131px;
+    width: ${props.desktopLogoWidth ? props.desktopLogoWidth + 'px' : '133px'};
+    height: ${props.desktopLogoHeight ? props.desktopLogoHeight + 'px' : 'auto'};
     display: none;
     ${({ theme }) => theme.mediaQueries.nav} {
       display: block;
@@ -44,12 +53,11 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Logo: React.FC<Props> = ({ isDark, href }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
       <LogoIcon className="mobile-icon" />
-      <LogoWithTextIcon className="desktop-icon" isDark={isDark} />
+      <LogoWithTextIcon className="desktop-icon" isDark={isDark} darkLogo={props.darkLogo} lightLogo={props.lightLogo} />
     </>
   );
 
