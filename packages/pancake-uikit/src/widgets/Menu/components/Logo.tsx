@@ -25,14 +25,14 @@ const Logo: React.FC<Props> = ({ isDark, href, ...props }) => {
     display: flex;
     align-items: center;
     .mobile-icon {
-      width: ${props.mobileLogoWidth ? props.mobileLogoWidth + "px" : "35px"};
+      width: ${props.mobileLogoWidth ? props.mobileLogoWidth + "px" : "32px"};
       height: ${props.mobileLogoHeight ? props.mobileLogoWidth + "px" : "auto"};
       ${({ theme }) => theme.mediaQueries.nav} {
         display: none;
       }
     }
     .desktop-icon {
-      width: ${props.desktopLogoWidth ? props.desktopLogoWidth + "px" : "133px"};
+      width: ${props.desktopLogoWidth ? props.desktopLogoWidth + "px" : "160px"};
       height: ${props.desktopLogoHeight ? props.desktopLogoHeight + "px" : "auto"};
       display: none;
       ${({ theme }) => theme.mediaQueries.nav} {
