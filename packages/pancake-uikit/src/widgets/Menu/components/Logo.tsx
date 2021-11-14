@@ -22,42 +22,47 @@ const blink = keyframes`
 
 const Logo: React.FC<Props> = ({ isDark, href, ...props }) => {
   const StyledLink = styled(Link)`
-  display: flex;
-  align-items: center;
-  .mobile-icon {
-    width: ${props.mobileLogoWidth ? props.mobileLogoWidth + 'px' : '35px'};
-    height: ${props.mobileLogoHeight ? props.mobileLogoWidth + 'px' : 'auto'};
-    ${({ theme }) => theme.mediaQueries.nav} {
+    display: flex;
+    align-items: center;
+    .mobile-icon {
+      width: ${props.mobileLogoWidth ? props.mobileLogoWidth + "px" : "35px"};
+      height: ${props.mobileLogoHeight ? props.mobileLogoWidth + "px" : "auto"};
+      ${({ theme }) => theme.mediaQueries.nav} {
+        display: none;
+      }
+    }
+    .desktop-icon {
+      width: ${props.desktopLogoWidth ? props.desktopLogoWidth + "px" : "133px"};
+      height: ${props.desktopLogoHeight ? props.desktopLogoHeight + "px" : "auto"};
       display: none;
+      ${({ theme }) => theme.mediaQueries.nav} {
+        display: block;
+      }
     }
-  }
-  .desktop-icon {
-    width: ${props.desktopLogoWidth ? props.desktopLogoWidth + 'px' : '133px'};
-    height: ${props.desktopLogoHeight ? props.desktopLogoHeight + 'px' : 'auto'};
-    display: none;
-    ${({ theme }) => theme.mediaQueries.nav} {
-      display: block;
-    }
-  }
-  .right-eye {
-    animation-delay: 20ms;
-  }
-  &:hover {
-    .left-eye,
     .right-eye {
-      transform-origin: center 60%;
-      animation-name: ${blink};
-      animation-duration: 350ms;
-      animation-iteration-count: 1;
+      animation-delay: 20ms;
     }
-  }
-`;
+    &:hover {
+      .left-eye,
+      .right-eye {
+        transform-origin: center 60%;
+        animation-name: ${blink};
+        animation-duration: 350ms;
+        animation-iteration-count: 1;
+      }
+    }
+  `;
 
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
       <LogoIcon className="mobile-icon" />
-      <LogoWithTextIcon className="desktop-icon" isDark={isDark} darkLogo={props.darkLogo} lightLogo={props.lightLogo} />
+      <LogoWithTextIcon
+        className="desktop-icon"
+        isDark={isDark}
+        darkLogo={props.darkLogo}
+        lightLogo={props.lightLogo}
+      />
     </>
   );
 

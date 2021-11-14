@@ -117,15 +117,16 @@ const Menu: React.FC<NavProps> = ({
     <Wrapper>
       <StyledNav showMenu={showMenu}>
         <Flex>
-          <Logo 
-            isDark={isDark} 
+          <Logo
+            isDark={isDark}
             href={homeLink?.href ?? "/"}
             darkLogo={darkLogo}
             lightLogo={lightLogo}
             desktopLogoWidth={desktopLogoWidth}
             mobileLogoWidth={mobileLogoWidth}
             desktopLogoHeight={desktopLogoHeight}
-            mobileLogoHeight={mobileLogoHeight} />
+            mobileLogoHeight={mobileLogoHeight}
+          />
           {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" />}
         </Flex>
         <Flex alignItems="center">

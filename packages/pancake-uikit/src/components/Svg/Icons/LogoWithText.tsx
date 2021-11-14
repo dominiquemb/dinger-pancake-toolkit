@@ -13,10 +13,14 @@ interface LogoProps extends SvgProps {
 
 const Logo: React.FC<LogoProps> = ({ isDark, ...props }) => {
   const textColor = isDark ? "#FFFFFF" : "#000000";
-  
+
   return (
     <>
-      {isDark ? <img src={props.darkLogo} className="desktop-icon" /> : <img src={props.lightLogo} className="desktop-icon" />}
+      {isDark ? (
+        <img src={props.darkLogo} className="desktop-icon" />
+      ) : (
+        <img src={props.lightLogo} className="desktop-icon" />
+      )}
     </>
   );
 };
