@@ -73,6 +73,7 @@ const Menu: React.FC<NavProps> = ({
   desktopLogoHeight,
   mobileLogoWidth,
   mobileLogoHeight,
+  coinImage,
 }) => {
   const { isMobile } = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState(true);
@@ -132,7 +133,7 @@ const Menu: React.FC<NavProps> = ({
         <Flex alignItems="center">
           {!isMobile && (
             <Box mr="12px">
-              <CakePrice cakePriceUsd={cakePriceUsd} />
+              <CakePrice cakePriceUsd={cakePriceUsd} coinImage={coinImage} />
             </Box>
           )}
           <Box mt="4px">

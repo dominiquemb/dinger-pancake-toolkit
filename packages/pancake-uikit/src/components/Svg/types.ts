@@ -13,6 +13,7 @@ export interface SvgProps extends SVGAttributes<HTMLOrSVGElement>, SpaceProps {
   mobileLogoHeight?: string;
   mobileLogoWidth?: string;
   isDark?: boolean;
+  coinImage?: string;
 }
 
 export type IconComponentType = {

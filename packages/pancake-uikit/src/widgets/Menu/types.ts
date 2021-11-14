@@ -36,4 +36,5 @@ export interface NavProps {
   desktopLogoWidth?: string;
   mobileLogoHeight?: string;
   mobileLogoWidth?: string;
+  coinImage?: string;
 }
