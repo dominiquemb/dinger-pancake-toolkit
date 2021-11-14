@@ -1,5 +1,4 @@
 import React from "react";
-import Svg from "../Svg";
 import { SvgProps } from "../types";
 
 interface LogoProps extends SvgProps {
@@ -7,8 +6,8 @@ interface LogoProps extends SvgProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ isDark, ...props }) => {
-  const DingerLight = require('../../../../assets/Dinger Swap Light.svg');
-  const DingerDark = require('../../../../assets/Dinger Swap Dark.svg');
+  const DingerLight = require("../../../assets/Dinger Swap Light.svg");
+  const DingerDark = require("../../../assets/Dinger Swap Dark.svg");
 
   const textColor = isDark ? "#FFFFFF" : "#000000";
   return (
