@@ -26,7 +26,7 @@ const Logo: React.FC<Props> = ({ isDark, href, ...props }) => {
     align-items: center;
     .mobile-icon {
       width: ${props.mobileLogoWidth ? props.mobileLogoWidth + "px" : "32px"};
-      height: ${props.mobileLogoHeight ? props.mobileLogoWidth + "px" : "auto"};
+      height: ${props.mobileLogoHeight ? props.mobileLogoHeight + "px" : "auto"};
       ${({ theme }) => theme.mediaQueries.nav} {
         display: none;
       }
@@ -56,7 +56,7 @@ const Logo: React.FC<Props> = ({ isDark, href, ...props }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
-      <LogoIcon className="mobile-icon" />
+      <LogoIcon className="mobile-icon" darkLogo={props.darkLogo} lightLogo={props.lightLogo} />
       <LogoWithTextIcon
         className="desktop-icon"
         isDark={isDark}

@@ -30,6 +30,7 @@ const MenuItem: React.FC<FooterProps> = ({
   buyCakeLabel,
   darkLogo,
   lightLogo,
+  coinImage,
   ...props
 }) => {
   return (
@@ -45,7 +46,7 @@ const MenuItem: React.FC<FooterProps> = ({
           alignItems="flex-start"
           mb={["42px", null, "36px"]}
         >
-          {items?.map((item) => (
+          {/* {items?.map((item) => (
             <StyledList key={item.label}>
               <StyledListItem>{item.label}</StyledListItem>
               {item.items?.map(({ label, href, isHighlighted = false }) => (
@@ -66,12 +67,12 @@ const MenuItem: React.FC<FooterProps> = ({
                 </StyledListItem>
               ))}
             </StyledList>
-          ))}
+          ))} */}
           <Box display={["none", null, "block"]}>
             <LogoWithTextIcon isDark width="160px" darkLogo={darkLogo} lightLogo={lightLogo} />
           </Box>
         </Flex>
-        <StyledSocialLinks order={[2]} pb={["42px", null, "32px"]} mb={["0", null, "32px"]} />
+        {/* <StyledSocialLinks order={[2]} pb={["42px", null, "32px"]} mb={["0", null, "32px"]} /> */}
         <StyledToolsContainer
           order={[1, null, 3]}
           flexDirection={["column", null, "row"]}
@@ -89,9 +90,9 @@ const MenuItem: React.FC<FooterProps> = ({
           </Flex>
           <Flex order={[1, null, 2]} mb={["24px", null, "0"]} justifyContent="space-between" alignItems="center">
             <Box mr="20px">
-              <CakePrice cakePriceUsd={cakePriceUsd} color={darkColors.textSubtle as keyof Colors} />
+              {/* <CakePrice cakePriceUsd={cakePriceUsd} coinImage={coinImage} color={darkColors.textSubtle as keyof Colors} /> */}
             </Box>
-            <Button
+            {/* <Button
               as="a"
               href="https://pancakeswap.finance/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82"
               target="_blank"
@@ -99,7 +100,7 @@ const MenuItem: React.FC<FooterProps> = ({
               endIcon={<ArrowForwardIcon color={lightColors.backgroundAlt} />}
             >
               {buyCakeLabel}
-            </Button>
+            </Button> */}
           </Flex>
         </StyledToolsContainer>
       </Flex>

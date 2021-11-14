@@ -21,4 +21,5 @@ export type FooterProps = {
   desktopLogoWidth?: string;
   mobileLogoHeight?: string;
   mobileLogoWidth?: string;
+  coinImage?: string;
 } & FlexProps;
